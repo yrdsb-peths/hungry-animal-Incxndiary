@@ -41,6 +41,12 @@ public class Fish extends Actor
         eat();
     }
     public void eat(){
-        removeTouching(Fries.class);
+        if(isTouching(Fries.class)){
+            removeTouching(Fries.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createFries();
+            world.increaseScore();
+        }
+        
     }
 }
