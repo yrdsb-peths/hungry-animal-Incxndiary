@@ -16,8 +16,31 @@ public class Fish extends Actor
     {
         if(Greenfoot.isKeyDown("d")){
             move(2);
-        }else if(Greenfoot.isKeyDown("a")){
+        }
+        if(Greenfoot.isKeyDown("a")){
             move(-2);
-        }// Add your action code here.
+        }
+        if(Greenfoot.isKeyDown("w")){
+            setLocation(getX(), getY() - 2);
+        }
+        if(Greenfoot.isKeyDown("s")){
+            setLocation(getX(), getY() + 2);
+        }
+        if(Greenfoot.isKeyDown("left")){
+            move(-2);
+        }
+        if(Greenfoot.isKeyDown("right")){
+            move(2);
+        }
+        if(Greenfoot.isKeyDown("up")){
+            setLocation(getX(), getY() - 2);
+        }
+        if(Greenfoot.isKeyDown("down")){
+            setLocation(getX(), getY() + 2);
+        }
+        eat();
+    }
+    public void eat(){
+        removeTouching(Fries.class);
     }
 }

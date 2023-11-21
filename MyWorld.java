@@ -13,5 +13,14 @@ public class MyWorld extends World
         super(600, 400, 1);
         Fish fish = new Fish();
         addObject(fish, 300, 300);
+        
+        createFries();
     }
+    public void createFries(){
+        Fries fries = new Fries();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(fries, x, y);
+    }
+    
 }
