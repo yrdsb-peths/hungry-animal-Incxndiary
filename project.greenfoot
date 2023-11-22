@@ -1,6 +1,7 @@
 #Greenfoot project file
 class.Fish.image=fish3.png
 class.Fries.image=chips-1.png
+class.MyWorld.image=Untitled\ design.jpg
 dependency1.from=MyWorld
 dependency1.to=Label
 dependency1.type=UsesDependency
@@ -19,10 +20,10 @@ dependency5.type=UsesDependency
 dependency6.from=Fish
 dependency6.to=Fries
 dependency6.type=UsesDependency
-editor.fx.0.height=737
-editor.fx.0.width=814
-editor.fx.0.x=232
-editor.fx.0.y=-19
+editor.fx.0.height=694
+editor.fx.0.width=1294
+editor.fx.0.x=-7
+editor.fx.0.y=-7
 height=694
 package.numDependencies=6
 package.numTargets=4

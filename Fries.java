@@ -16,7 +16,7 @@ public class Fries extends Actor
     {
         setLocation(getX(), getY() + 2);
         MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight()){
+        if(getY() == world.getHeight()-1){
             world.gameOver();
             world.removeObject(this);
         }

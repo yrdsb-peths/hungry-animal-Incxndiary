@@ -12,6 +12,7 @@ public class Fish extends Actor
      * Act - do whatever the Fish wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GreenfootSound FishSound = new GreenfootSound("fisheat.mp3");
     public void act()
     {
         if(Greenfoot.isKeyDown("d")){
@@ -46,6 +47,7 @@ public class Fish extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createFries();
             world.increaseScore();
+            FishSound.play();
         }
         
     }
