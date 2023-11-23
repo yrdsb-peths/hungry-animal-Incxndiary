@@ -13,6 +13,21 @@ public class Fish extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootSound FishSound = new GreenfootSound("fisheat.mp3");
+    GreenfootImage[] idle = new GreenfootImage[10];
+    
+    public Fish(){
+        for(int i = 0; i < idle.length; i++){
+            idle[i] = new GreenfootImage("images/fish_idle/idle" + i + ".png");
+        }
+        setImage(idle[0]);
+    }
+    
+    int imageIndex = 0;
+    public void animateFish(){
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("d")){
@@ -39,7 +54,10 @@ public class Fish extends Actor
         if(Greenfoot.isKeyDown("down")){
             setLocation(getX(), getY() + 2);
         }
+        
         eat();
+        
+        animateFish();
     }
     public void eat(){
         if(isTouching(Fries.class)){
