@@ -16,26 +16,18 @@ public class Powerup extends Actor
     
     
     int speed = 1;
-    gameover = false;
+    
     public void act()
     {
         fastImage.scale(10, 10);
         setLocation(getX(), getY() + speed);
         MyWorld world = (MyWorld) getWorld();
-        while(gameover = false){
-            if(gameover = true){
-                if(getY() == world.getHeight()-1){
-                    world.removeObject(this);
-                }
-            }else{
-                if(getY() == world.getHeight()-1){
-                    world.removeObject(this);
-                    
-                }
-            }
-        }
         
+        if(getY() == world.getHeight()-1){
+            world.removeObject(this);
+        }
     }
+    
     
     public void setSpeed(int s){
         speed = s;

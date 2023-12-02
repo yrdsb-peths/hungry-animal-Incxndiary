@@ -13,7 +13,6 @@ public class Fries extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int speed = 1;
-    
     public void act()
     {
         setLocation(getX(), getY() + speed);
@@ -21,6 +20,7 @@ public class Fries extends Actor
         if(getY() == world.getHeight()-1){
             world.gameOver();
             world.removeObject(this);
+            
         }
     }
     

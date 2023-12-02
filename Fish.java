@@ -18,7 +18,8 @@ public class Fish extends Actor
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
     
-    
+    int leftSpeed = -2;
+    int rightSpeed = 2;
     public Fish(){
         for(int i = 0; i < idleRight.length; i++){
             idleRight[i] = new GreenfootImage("images/fish_idle/idle" + i + ".png");
@@ -52,28 +53,33 @@ public class Fish extends Actor
         }
         
     }
+    SimpleTimer speed = new SimpleTimer();
     
     public void act()
     {
+        if(speed.millisElapsed() > 2500){
+            leftSpeed = -2;
+            rightSpeed = 2;
+        }
         if(Greenfoot.isKeyDown("w")){
-            setLocation(getX(), getY() - 2);
+            setLocation(getX(), getY() + leftSpeed);
         }
         if(Greenfoot.isKeyDown("s")){
-            setLocation(getX(), getY() + 2);
+            setLocation(getX(), getY() + rightSpeed);
         }
         if(Greenfoot.isKeyDown("left")){
-            move(-2);
+            move(leftSpeed);
             facing = "left";
         }
         if(Greenfoot.isKeyDown("right")){
-            move(2);
+            move(rightSpeed);
             facing = "right";
         }
         if(Greenfoot.isKeyDown("up")){
-            setLocation(getX(), getY() - 2);
+            setLocation(getX(), getY() + leftSpeed);
         }
         if(Greenfoot.isKeyDown("down")){
-            setLocation(getX(), getY() + 2);
+            setLocation(getX(), getY() + rightSpeed);
         }
         
         eat();
@@ -92,9 +98,10 @@ public class Fish extends Actor
     }
     public void powerUp(){
         if(isTouching(Powerup.class)){
+            speed.mark();
             removeTouching(Powerup.class);
-            
-            
+            leftSpeed = -5;
+            rightSpeed = 5;
             MyWorld world = (MyWorld) getWorld();
             world.createPowerup();
             

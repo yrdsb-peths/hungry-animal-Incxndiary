@@ -5,6 +5,8 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
+    SimpleTimer spawn = new SimpleTimer();
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -42,6 +44,7 @@ public class MyWorld extends World
     }
 
     public void createPowerup(){
+        spawn.mark();
         Powerup Power = new Powerup();
         Power.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
