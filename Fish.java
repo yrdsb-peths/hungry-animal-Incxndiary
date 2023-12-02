@@ -55,14 +55,6 @@ public class Fish extends Actor
     
     public void act()
     {
-        if(Greenfoot.isKeyDown("d")){
-            move(2);
-            facing = "right";
-        }
-        if(Greenfoot.isKeyDown("a")){
-            move(-2);
-            facing = "left";
-        }
         if(Greenfoot.isKeyDown("w")){
             setLocation(getX(), getY() - 2);
         }
@@ -85,7 +77,7 @@ public class Fish extends Actor
         }
         
         eat();
-        
+        powerUp();
         animateFish();
     }
     public void eat(){
@@ -97,5 +89,15 @@ public class Fish extends Actor
             FishSound.play();
         }
         
+    }
+    public void powerUp(){
+        if(isTouching(Powerup.class)){
+            removeTouching(Powerup.class);
+            
+            
+            MyWorld world = (MyWorld) getWorld();
+            world.createPowerup();
+            
+        }
     }
 }

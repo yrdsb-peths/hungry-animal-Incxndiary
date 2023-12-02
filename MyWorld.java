@@ -18,6 +18,7 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 40);
         addObject(scoreLabel, 20, 20);
         createFries();
+        createPowerup();
     }
 
     public void gameOver(){
@@ -40,4 +41,11 @@ public class MyWorld extends World
         
     }
 
+    public void createPowerup(){
+        Powerup Power = new Powerup();
+        Power.setSpeed(level);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(Power, x, y);
+    }
 }
