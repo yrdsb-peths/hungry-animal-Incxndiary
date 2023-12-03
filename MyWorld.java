@@ -20,6 +20,7 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 40);
         addObject(scoreLabel, 20, 20);
         createFries();
+        createEnemy();
         createPowerup();
     }
 
@@ -50,5 +51,14 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(Power, x, y);
+    }
+    
+    public void createEnemy(){
+        Enemy shark = new Enemy();
+        shark.setSpeed(level);
+        int x = 0;
+        int y = Greenfoot.getRandomNumber(600);
+        addObject(shark, x, y);
+        
     }
 }
