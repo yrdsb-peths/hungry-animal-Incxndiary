@@ -85,6 +85,7 @@ public class Fish extends Actor
         eat();
         powerUp();
         animateFish();
+        checkEnemy();
     }
     public void eat(){
         if(isTouching(Fries.class)){
@@ -105,6 +106,15 @@ public class Fish extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createPowerup();
             
+        }
+    }
+    public void checkEnemy(){
+        
+        if(isTouching(Enemy.class)){
+            removeTouching(Enemy.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
+            world.removeObject(this);
         }
     }
 }
