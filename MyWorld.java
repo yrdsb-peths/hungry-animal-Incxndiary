@@ -22,7 +22,7 @@ public class MyWorld extends World
         createApple();
         createEnemy();
         createPowerup();
-        createStrawberry();
+        
     }
     
     public void gameOver(){
@@ -62,12 +62,5 @@ public class MyWorld extends World
         addObject(shark, x, y);
         
     }
-    public void createStrawberry(){
-        Strawberry strawberry = new Strawberry();
-        strawberry.setSpeed(level);
-        int x = Greenfoot.getRandomNumber(600);
-        int y = 0;
-        addObject(strawberry, x, y);
-        
-    }
+    
 }

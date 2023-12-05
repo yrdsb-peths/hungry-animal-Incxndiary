@@ -19,7 +19,8 @@ public class Powerup extends Actor
     int speed = 1;
     int level = 1;
     public Powerup(){
-        fastImage.scale(10, 10);
+        fastImage.scale(50, 50);
+        setImage(fastImage);
     }
     public void act()
     {

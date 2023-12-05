@@ -84,7 +84,7 @@ public class Fish extends Actor
         if(Greenfoot.isKeyDown("down")){
             setLocation(getX(), getY() + rightSpeed);
         }
-        eat1();
+        
         eat();
         powerUp();
         animateFish();
@@ -121,15 +121,6 @@ public class Fish extends Actor
             jumpscare.play();
         }
     }
-    public void eat1(){
-        if(isTouching(Strawberry.class)){
-            removeTouching(Strawberry.class);
-            MyWorld world = (MyWorld) getWorld();
-            world.createStrawberry();
-            world.increaseScore();
-            FishSound.play();
-        }
-        
-    }
+    
     
 }
