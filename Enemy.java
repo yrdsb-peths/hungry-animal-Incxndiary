@@ -46,7 +46,7 @@ public class Enemy extends Actor
         MyWorld world = (MyWorld) getWorld();
         if(getX() == world.getWidth()-1){
             world.removeObject(this);
-            
+            world.createEnemy();
         }
         animateShark();
     }

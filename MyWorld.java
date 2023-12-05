@@ -19,9 +19,10 @@ public class MyWorld extends World
         addObject(fish, 300, 300);
         scoreLabel = new Label(0, 40);
         addObject(scoreLabel, 20, 20);
-        createFries();
+        createApple();
         createEnemy();
         createPowerup();
+        createStrawberry();
     }
 
     public void gameOver(){
@@ -31,16 +32,16 @@ public class MyWorld extends World
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
-        if(score%10 == 0){
+        if(score % 10 == 0){
             level += 1;
         }
     }
-    public void createFries(){
-        Fries fries = new Fries();
-        fries.setSpeed(level);
+    public void createApple(){
+        Apple apple = new Apple();
+        apple.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
-        addObject(fries, x, y);
+        addObject(apple, x, y);
         
     }
 
@@ -59,6 +60,14 @@ public class MyWorld extends World
         int x = 0;
         int y = Greenfoot.getRandomNumber(600);
         addObject(shark, x, y);
+        
+    }
+    public void createStrawberry(){
+        Strawberry strawberry = new Strawberry();
+        strawberry.setSpeed(level);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(strawberry, x, y);
         
     }
 }

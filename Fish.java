@@ -13,6 +13,7 @@ public class Fish extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootSound FishSound = new GreenfootSound("fisheat.mp3");
+    GreenfootSound jumpscare = new GreenfootSound("jumpscare.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[10];
     GreenfootImage[] idleLeft = new GreenfootImage[10];
     String facing = "right";
@@ -36,6 +37,8 @@ public class Fish extends Actor
         
         setImage(idleRight[0]);
     }
+    
+    
     
     int imageIndex = 0;
     public void animateFish(){
@@ -81,17 +84,18 @@ public class Fish extends Actor
         if(Greenfoot.isKeyDown("down")){
             setLocation(getX(), getY() + rightSpeed);
         }
-        
+        eat1();
         eat();
         powerUp();
         animateFish();
         checkEnemy();
     }
+    
     public void eat(){
-        if(isTouching(Fries.class)){
-            removeTouching(Fries.class);
+        if(isTouching(Apple.class)){
+            removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
-            world.createFries();
+            world.createApple();
             world.increaseScore();
             FishSound.play();
         }
@@ -109,12 +113,23 @@ public class Fish extends Actor
         }
     }
     public void checkEnemy(){
-        
         if(isTouching(Enemy.class)){
-            removeTouching(Enemy.class);
+            removeTouching(Fish.class);
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
+            jumpscare.play();
         }
     }
+    public void eat1(){
+        if(isTouching(Strawberry.class)){
+            removeTouching(Strawberry.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createStrawberry();
+            world.increaseScore();
+            FishSound.play();
+        }
+        
+    }
+    
 }
