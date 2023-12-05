@@ -14,12 +14,15 @@ public class Powerup extends Actor
      */
     GreenfootImage fastImage = new GreenfootImage("images/SPWRUP.png");
     
-    
+    SimpleTimer spawn = new SimpleTimer();
+
     int speed = 1;
-    
+    int level = 1;
+    public Powerup(){
+        fastImage.scale(10, 10);
+    }
     public void act()
     {
-        fastImage.scale(10, 10);
         setLocation(getX(), getY() + speed);
         MyWorld world = (MyWorld) getWorld();
         

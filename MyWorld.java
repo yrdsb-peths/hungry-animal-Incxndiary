@@ -24,7 +24,7 @@ public class MyWorld extends World
         createPowerup();
         createStrawberry();
     }
-
+    
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 50);
         addObject(gameOverLabel, 300, 300);
