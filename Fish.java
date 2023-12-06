@@ -12,6 +12,7 @@ public class Fish extends Actor
      * Act - do whatever the Fish wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    Label again = new Label("Press <space> to start", 50);
     GreenfootSound FishSound = new GreenfootSound("fisheat.mp3");
     GreenfootSound jumpscare = new GreenfootSound("jumpscare.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[10];
@@ -118,6 +119,8 @@ public class Fish extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
+            TitleScreen aftermath = new TitleScreen();
+            Greenfoot.setWorld(aftermath);
             jumpscare.play();
         }
     }
