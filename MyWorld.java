@@ -6,7 +6,12 @@ public class MyWorld extends World
     Label scoreLabel;
     int level = 1;
     SimpleTimer spawn = new SimpleTimer();
-
+    
+    /* 
+     * I like how you changed the elephant actor to a fish and you added 
+     * a shark as an enemy. I like the calm noise it makes when 
+     * you die to the shark :)))
+     */
     /**
      * Constructor for objects of class MyWorld.
      * 
