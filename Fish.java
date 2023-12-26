@@ -71,6 +71,14 @@ public class Fish extends Actor
         if(Greenfoot.isKeyDown("s")){
             setLocation(getX(), getY() + rightSpeed);
         }
+        if(Greenfoot.isKeyDown("a")){
+            move(leftSpeed);
+            facing = "left";
+        }
+        if(Greenfoot.isKeyDown("d")){
+            move(rightSpeed);
+            facing = "right";
+        }
         if(Greenfoot.isKeyDown("left")){
             move(leftSpeed);
             facing = "left";
